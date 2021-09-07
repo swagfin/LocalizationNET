@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{ ViewData["Title"] = "Home page"; }
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container">
+    <div style="font-size:16px;font-weight:bold;">THE FOLLOWING LANGUAGE IS IN: <label style="font-size:16px;font-weight:bold;color:red">@Model.LocalizationService.GetLanguageCulture().ToUpper()</label> </div>
+    <hr />
+    <p>The Following Message have been Translated</p>
+    <ol>
+        <li>@Model.LocalizationService.Localize("Your account has been created successfully by the system admin")</li>
+        <li>@Model.LocalizationService.Localize("Use the following password to login")</li>
+        <li>@Model.LocalizationService.Localize("Remember to reset your password once you login to something you can easily remember")!</li>
+        <li>@Model.LocalizationService.Localize("Your login credentials were reset by your Admin")</li>
+        <li>@Model.LocalizationService.Localize("Click here to reset your password")</li>
+    </ol>
+    <form method="post">
+        <button class="btn  btn-outline-info" type="submit">TEST EMAIL</button>
+    </form>
+</div>
